@@ -1,0 +1,14 @@
+{
+  "url": "https://petstore.swagger.io/v2/swagger.json",
+  "deepLinking": true,
+  "displayOperationId": true,
+  "defaultModelsExpandDepth": 1,
+  "defaultModelExpandDepth": 1,
+  "defaultModelRendering": "example",
+  "displayRequestDuration": true,
+  "docExpansion": "none",
+  "filter": false,
+  "operationsSorter": "alpha",
+  "showExtensions": true,
+  "tagsSorter": "alpha"
+}
