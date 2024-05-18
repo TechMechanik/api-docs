@@ -1,7 +1,7 @@
 {
-  "url": "https://petstore.swagger.io/v2/swagger.json",
+  "url": "/docs/assets/openapi/v3.0/petstore.json",
   "deepLinking": true,
-  "displayOperationId": true,
+  "displayOperationId": false,
   "defaultModelsExpandDepth": 1,
   "defaultModelExpandDepth": 1,
   "defaultModelRendering": "example",
