@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://API/WOD_v1/" xmlns:s0="http://www.outsystems.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://API/WOD_v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webservice with methods related with WODs, to expose.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.outsystems.com">
+      <s:element name="GetWOD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LocationText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWODResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WOD" type="s0:APIWod" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="APIWod">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WodHeader" type="s0:WODHeader" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:date" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdatedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s0:Location" />
+          <s:element minOccurs="0" maxOccurs="1" name="Program" type="s0:GymProgram" />
+          <s:element minOccurs="0" maxOccurs="1" name="Announcements" type="s0:ArrayOfAnnouncement" />
+          <s:element minOccurs="0" maxOccurs="1" name="Components" type="s0:ArrayOfAPIComponent" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoachNotes" type="s0:ObjectNote" />
+          <s:element minOccurs="0" maxOccurs="1" name="FormattedWOD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WODHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Date" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="InternalPublishDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShouldPublishToBlog" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlogPublishDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlogLinkToPublicWhiteboard" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkifiedComments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnershipLevelId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GymProgramId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPostUpdateRequired" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlogPostId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WordPressPostStatusId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBeenSaved" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastEditDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PublicId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopiedFromWODHeaderId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecureProgrammingEnabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="VideoLinkId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Location">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetAddress1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetAddress2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StateId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShowInWodiFind" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="WodiFindName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WodiFindDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailSignature" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnableEmailSignature" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailFromLabel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StaffSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ABNNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSTNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BusinessTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AffiliateId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="StripeTerminalLocationId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassProcessingFeeEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProcessingFeeCutoffAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeZoneId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LeadOwnerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClientOwnerId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProcessingFeeTaxTypeId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProcessingFeeTaxRate" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GymProgram">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PublishExternally" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountTowardsAttendanceLimits" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecureProgrammingEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecureProgrammingOptionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Is_Active" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnnouncement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Announcement" nillable="true" type="s0:Announcement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Announcement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkifiedMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:date" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExternal" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedOn" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActive" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContentId" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendPushNotifications" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSentPushNotifications" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendNotificationsDateTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAPIComponent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="APIComponent" nillable="true" type="s0:APIComponent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="APIComponent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComponentTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnershipLevelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBenchmark" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBeenSaved" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNewComponentEmailSent" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ScalingId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rounds" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RepScheme" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultTypeName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSection" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="WODComponentId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsImage" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectNote">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjectTypeId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerId" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWODSoapIn">
+    <wsdl:part name="parameters" element="s0:GetWOD" />
+  </wsdl:message>
+  <wsdl:message name="GetWODSoapOut">
+    <wsdl:part name="parameters" element="s0:GetWODResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WOD_v1Soap">
+    <wsdl:operation name="GetWOD">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to get a specific workout.</wsdl:documentation>
+      <wsdl:input message="tns:GetWODSoapIn" />
+      <wsdl:output message="tns:GetWODSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WOD_v1Soap" type="tns:WOD_v1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWOD">
+      <soap:operation soapAction="http://API/WOD_v1/GetWOD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WOD_v1Soap12" type="tns:WOD_v1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWOD">
+      <soap12:operation soapAction="http://API/WOD_v1/GetWOD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WOD_v1">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webservice with methods related with WODs, to expose.</wsdl:documentation>
+    <wsdl:port name="WOD_v1Soap" binding="tns:WOD_v1Soap">
+      <soap:address location="https://app.wodify.com/API/WOD_v1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WOD_v1Soap12" binding="tns:WOD_v1Soap12">
+      <soap12:address location="https://app.wodify.com/API/WOD_v1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

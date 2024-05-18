@@ -1,0 +1,13 @@
+{
+    "wsdls": [
+      {
+        "name": "GlobalWeather",
+        "url": "docs/assets/globalWeather.xml"
+      },
+      {
+        "name": "AnotherService",
+        "url": "docs/assets/wod.xml"
+      }
+    ]
+  }
+  
