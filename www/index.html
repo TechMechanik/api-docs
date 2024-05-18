@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="swagger/swagger-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>API Documentation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#rest-api">REST API</a></li>
+            <li><a href="#soap-api">SOAP API</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="rest-api">
+            <h2>REST API Documentation</h2>
+            <div id="swagger-ui"></div>
+        </section>
+        <section id="soap-api">
+            <h2>SOAP API Documentation</h2>
+            <div id="soap-docs">
+                <div class="wsdl-link">
+                    <h3>WSDL Links</h3>
+                    <ul>
+                        <li><a href="path/to/your.wsdl" target="_blank">Service 1 WSDL</a></li>
+                        <li><a href="path/to/another.wsdl" target="_blank">Service 2 WSDL</a></li>
+                    </ul>
+                </div>
+                <div class="examples">
+                    <h3>Request and Response Examples</h3>
+                    <div class="example">
+                        <h4>Example 1</h4>
+                        <p><strong>Request:</strong></p>
+                        <pre>
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://example.com/webservices"&gt;
+    &lt;soapenv:Header/&gt;
+    &lt;soapenv:Body&gt;
+        &lt;web:MyRequest&gt;
+            &lt;web:Parameter&gt;Value&lt;/web:Parameter&gt;
+        &lt;/web:MyRequest&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+                        </pre>
+                        <p><strong>Response:</strong></p>
+                        <pre>
+&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://example.com/webservices"&gt;
+    &lt;soapenv:Header/&gt;
+    &lt;soapenv:Body&gt;
+        &lt;web:MyResponse&gt;
+            &lt;web:Result&gt;Success&lt;/web:Result&gt;
+        &lt;/web:MyResponse&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+                        </pre>
+                    </div>
+                    <!-- Add more examples as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+    <script src="swagger/swagger-ui-bundle.js"></script>
+    <script src="swagger/swagger-ui-standalone-preset.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
