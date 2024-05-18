@@ -1,0 +1,11 @@
+<definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="Service2">
+    <service name="Service2">
+        <port name="Port2" binding="tns:Binding2">
+            <soap:address location="http://example.com/service2"/>
+        </port>
+    </service>
+    <portType name="PortType2">
+        <operation name="OperationA"/>
+        <operation name="OperationB"/>
+    </portType>
+</definitions>

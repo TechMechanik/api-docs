@@ -1,71 +1,50 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+.container {
+    display: flex;
+    width: 100%;
 }
 
-nav {
-    background-color: #333;
+.menu {
+    width: 20%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
-nav ul {
+.menu h2 {
+    font-size: 24px;
+}
+
+.menu ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
-nav li {
-    float: left;
+.menu ul li {
+    margin: 15px 0;
 }
 
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
+.menu ul li a {
     text-decoration: none;
+    color: #333;
 }
 
-nav li a:hover {
-    background-color: #111;
+.content {
+    width: 80%;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-main {
-    padding: 1rem;
+.content h1 {
+    font-size: 28px;
 }
 
-h2 {
-    color: #4CAF50;
-}
-
-#swagger-ui {
-    margin-top: 2rem;
-}
-
-#soap-docs .wsdl-link ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#soap-docs .wsdl-link li {
-    margin: 0.5rem 0;
-}
-
-#soap-docs .examples .example {
-    margin: 2rem 0;
-}
-
-pre {
-    background-color: #f4f4f4;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    overflow-x: auto;
+.content p {
+    font-size: 18px;
 }
