@@ -1,6 +1,7 @@
-# api-docs Documentation
 
-Welcome to the api-docs Documentation repository. This repository contains files and configurations for documenting REST and SOAP APIs using Swagger UI and WSDL parsing.
+# api-doc Documentation
+
+Welcome to the api-doc Documentation repository. This repository contains files and configurations for documenting REST and SOAP APIs using Swagger UI and WSDL parsing.
 
 ## Table of Contents
 
@@ -16,27 +17,29 @@ This repository provides an easy-to-navigate web interface for viewing API docum
 
 ## File Structure
 
+```
 api-docs/
 ├── assets/
-│ ├── openapi/
-│ │ └── v3.0/
-│ │ └── petstore.json
-│ └── wsdl/
-│ ├── globalweather.wsdl
-│ └── anotherservice.wsdl
+│   ├── openapi/
+│   │   └── v3.0/
+│   │       └── petstore.json
+│   └── wsdl/
+│       ├── globalweather.wsdl
+│       └── anotherservice.wsdl
 ├── css/
-│ ├── rest-custom.css
-│ └── swagger-ui.css
+│   ├── rest-custom.css
+│   └── swagger-ui.css
 ├── js/
-│ └── rest-script.js
+│   └── rest-script.js
 ├── swagger/
-│ ├── config.json
-│ ├── swagger-ui-bundle.js
-│ ├── swagger-ui-standalone-preset.js
-│ └── swagger-ui.css
+│   ├── config.json
+│   ├── swagger-ui-bundle.js
+│   ├── swagger-ui-standalone-preset.js
+│   └── swagger-ui.css
 ├── wsdl/
-│ └── config.json
+│   └── config.json
 └── rest.dsp
+```
 
 ### assets/
 
@@ -84,37 +87,37 @@ To run this project, you need:
    cd api-docs
    ```
 
-1. **Configure Your Server**
+2. **Configure Your Server**
 
-Ensure your web server is configured to serve DSP files and has access to the necessary directories.
+   Ensure your web server is configured to serve DSP files and has access to the necessary directories.
 
-1. **Place Your WSDL Files**
+3. **Place Your WSDL Files**
 
-Add your WSDL files to the assets/wsdl/ directory and update wsdl/config.json accordingly.
+   Add your WSDL files to the `assets/wsdl/` directory and update `wsdl/config.json` accordingly.
 
-1. **Update Swagger Config**
+4. **Update Swagger Config**
 
-If needed, update the swagger/config.json file to point to your OpenAPI specification file.
+   If needed, update the `swagger/config.json` file to point to your OpenAPI specification file.
 
 ## Usage
 
 1. **Start Your Server**
 
-Start your web server and navigate to the URL where the rest.dsp file is served. For example:
+   Start your web server and navigate to the URL where the `rest.dsp` file is served. For example:
 
-   ```bash
+   ```
    http://localhost:8080/api-docs/rest.dsp
    ```
 
-Navigate the Documentation
+2. **Navigate the Documentation**
 
-1. **SOAP Section**: Click on the SOAP menu items to view the parsed WSDL documentation.
-1. **REST Section**: Click on the REST menu items to view the Swagger UI documentation.
+   - **SOAP Section**: Click on the SOAP menu items to view the parsed WSDL documentation.
+   - **REST Section**: Click on the REST menu items to view the Swagger UI documentation.
 
 ## Contributing
+
 Contributions are welcome! Please create an issue or submit a pull request for any improvements or bug fixes.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
-This `README.md` provides a clear and organized overview of your repository, detailing the file structure, setup instructions, and usage. Adjust the file paths and URLs as needed to match your actual setup.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
