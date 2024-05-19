@@ -89,7 +89,7 @@
     </div>
     <script src="swagger/swagger-ui-bundle.js"></script>
     <script src="swagger/swagger-ui-standalone-preset.js"></script>
-    <script src="js/rest-script.js"></script>
+    <script src="js/rest-dsp-script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </body>
 </html>
