@@ -1,6 +1,6 @@
 {
   "url": "/docs/assets/openapi/v3.0/petstore.json",
-  "deepLinking": true,
+  "deepLinking": false,
   "displayOperationId": false,
   "defaultModelsExpandDepth": 1,
   "defaultModelExpandDepth": 1,

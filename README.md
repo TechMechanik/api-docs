@@ -27,10 +27,9 @@ api-docs/
 │       ├── globalweather.wsdl
 │       └── anotherservice.wsdl
 ├── css/
-│   ├── rest-custom.css
-│   └── swagger-ui.css
+│   └── style.css
 ├── js/
-│   └── rest-script.js
+│   └── script.js
 ├── swagger/
 │   ├── config.json
 │   ├── swagger-ui-bundle.js
@@ -38,7 +37,7 @@ api-docs/
 │   └── swagger-ui.css
 ├── wsdl/
 │   └── config.json
-└── rest.dsp
+└── index.html
 ```
 
 ### assets/
